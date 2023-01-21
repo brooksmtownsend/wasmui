@@ -5,7 +5,7 @@ use wasmcloud_interface_httpserver::{HttpRequest, HttpResponse, HttpServer, Http
 #[derive(Debug, Default, Actor, HealthResponder, rust_embed::RustEmbed)]
 #[services(Actor, HttpServer)]
 /// TODO: Change this folder to where your static assets live
-#[folder = "./build"]
+#[folder = "./ui/build"]
 struct UIActor;
 
 #[async_trait]
