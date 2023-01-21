@@ -2462,13 +2462,8 @@ dependencies = [
 name = "wasmui"
 version = "0.1.0"
 dependencies = [
- "async-trait",
- "form_urlencoded",
  "futures",
  "rust-embed",
- "serde",
- "serde_bytes",
- "serde_json",
  "wasmbus-rpc",
  "wasmcloud-interface-httpserver",
  "wasmcloud-interface-logging",

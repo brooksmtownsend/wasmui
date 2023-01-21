@@ -28,12 +28,8 @@ fn get_asset(asset: String) -> RpcResult<HttpResponse> {
         asset.trim().trim_start_matches('/')
     };
 
-    if let Some(static_asset) = UIActor::get(asset_request) {
-        Ok(HttpResponse {
-            body: Vec::from(static_asset.data),
-            ..Default::default()
-        })
-    } else {
-        Ok(HttpResponse::not_found())
-    }
+    Ok(UIActor::get(asset_request)
+        .map(|asset| asset.data)
+        .map(HttpResponse::ok)
+        .unwrap_or_else(|| HttpResponse::not_found()))
 }
