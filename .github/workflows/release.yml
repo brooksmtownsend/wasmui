@@ -15,6 +15,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16.15.0
       - uses: wasmcloud/common-actions/install-wash@main
       - name: Add wasm32-unknown-unknown
         run: rustup target add wasm32-unknown-unknown
