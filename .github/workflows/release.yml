@@ -93,7 +93,7 @@ jobs:
       - name: Run in Cosmonic
         if: startswith(github.ref, 'refs/tags/') # Only run on tag push
         env:
-          WASMCLOUD_LATTICE_PREFIX: 09779d9a-ee97-4ad0-b4f7-647797cf023e
+          WASMCLOUD_LATTICE_PREFIX: 374b6434-f18d-4b93-8743-bcd3089e4d5b
           WASMCLOUD_CTL_HOST: connect.cosmonic.sh
           WASMCLOUD_CTL_SEED: ${{ secrets.WASMCLOUD_CTL_SEED }}
           WASMCLOUD_CTL_JWT: ${{ secrets.WASMCLOUD_CTL_JWT }}
