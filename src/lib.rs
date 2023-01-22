@@ -21,13 +21,13 @@ impl HttpServer for UIActor {
 }
 
 fn get_asset(asset: String) -> RpcResult<HttpResponse> {
-    wasmcloud_interface_logging::info!("Received request for asset: {:?}", asset);
-
     let asset_request = if asset.trim() == "/" || asset.trim().is_empty() {
         "index.html"
     } else {
         asset.trim().trim_start_matches('/')
     };
+
+    wasmcloud_interface_logging::info!("Received request for asset: {:?}", asset_request);
 
     Ok(UIActor::get(asset_request)
         .map(|asset| asset.data)

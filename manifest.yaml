@@ -1,0 +1,11 @@
+---
+  capabilities:
+    - image_ref: wasmcloud.azurecr.io/httpserver:0.17.0
+      link_name: default
+  links:
+    - actor: 
+      provider_id: MDNJO4W2KNFYVGM4JR5J55SM7MVMLPTIYOQDCYLFFNUWO5A4IVN5QSTR
+      contract_id: wasmcloud:httpserver
+      link_name: default
+      values:
+        PORT: 8080
