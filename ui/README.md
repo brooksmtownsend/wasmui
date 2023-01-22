@@ -1,32 +1,40 @@
-# KVCounter UI
+# vue-project
 
-This UI is meant to work in tandem with the KVCounter Actor. It will allow you to set a "bucket" name and increment the
-count for this bucket by clicking the button.
+This template should help get you started developing with Vue 3 in Vite.
 
-## Environment Variables
+## Recommended IDE Setup
 
-The `REACT_APP_API_URL` should be the url to the KVCounter API. If it isn't set, it will fall back to the current host.
-In development, it assumes that the url will [proxy](https://create-react-app.dev/docs/proxying-api-requests-in-development/)
-all missed requests to http://localhost:8080.
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
 
-Note: The API must support CORS if it is not on the same domain.
+## Type Support for `.vue` Imports in TS
 
-## Available Scripts
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
 
-In the project directory, you can run:
+If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-### `npm start`
+1. Disable the built-in TypeScript Extension
+    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
+    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
+2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Customize configuration
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-### `npm run build`
+## Project Setup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+npm install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
