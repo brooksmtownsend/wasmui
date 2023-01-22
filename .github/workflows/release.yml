@@ -18,6 +18,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16.15.0
+      - uses: Swatinem/rust-cache@v2
       - uses: wasmcloud/common-actions/install-wash@main
       - name: Add wasm32-unknown-unknown
         run: rustup target add wasm32-unknown-unknown
