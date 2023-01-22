@@ -90,3 +90,12 @@ jobs:
           WASH_REG_PASSWORD: ${{ secrets.WASMCLOUD_PAT }}
         run: |
           wash reg push ghcr.io/${{ github.REPOSITORY }}:${{ env.actor-version }} build/${{ env.actor-name }}_s.wasm -a org.opencontainers.image.source=https://github.com/${{ github.REPOSITORY }} --allow-latest
+      - name: Run in Cosmonic
+        if: startswith(github.ref, 'refs/tags/') # Only run on tag push
+        env:
+          WASMCLOUD_LATTICE_PREFIX: 09779d9a-ee97-4ad0-b4f7-647797cf023e
+          WASMCLOUD_CTL_HOST: connect.cosmonic.sh
+          WASMCLOUD_CTL_SEED: ${{ secrets.WASMCLOUD_CTL_SEED }}
+          WASMCLOUD_CTL_JWT: ${{ secrets.WASMCLOUD_CTL_JWT }}
+        run: |
+          wash ctl start actor ghcr.io/${{ github.REPOSITORY }}:${{ env.actor-version }} -c cosmonic_managed=true
