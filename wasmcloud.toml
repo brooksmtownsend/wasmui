@@ -1,7 +1,7 @@
 name = "wasmui"
 language = "rust"
 type = "actor"
-version = "0.1.1"
+version = "0.1.2"
 
 [actor]
 claims = ["wasmcloud:httpserver", "wasmcloud:builtin:logging"]
