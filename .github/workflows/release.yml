@@ -98,4 +98,5 @@ jobs:
           WASMCLOUD_CTL_SEED: ${{ secrets.WASMCLOUD_CTL_SEED }}
           WASMCLOUD_CTL_JWT: ${{ secrets.WASMCLOUD_CTL_JWT }}
         run: |
+          wash ctx new host_config.json; cp ~/.wash/contexts/host_config.json ~/.wash/host_config.json
           wash ctl start actor ghcr.io/${{ github.REPOSITORY }}:${{ env.actor-version }} -c cosmonic_managed=true
